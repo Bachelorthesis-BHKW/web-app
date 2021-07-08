@@ -1,0 +1,12 @@
+<div *ngIf="energySystem">
+  <h2>{{ energySystem.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{ energySystem.energySystemId }}</div>
+  <div>
+    <label for="energy-system-name">Energy-System name: </label>
+    <input
+      id="energy-system-name"
+      [(ngModel)]="energySystem.name"
+      placeholder="name"
+    />
+  </div>
+</div>
