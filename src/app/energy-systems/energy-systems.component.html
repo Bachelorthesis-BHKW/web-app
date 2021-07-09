@@ -1,11 +1,10 @@
 <h2>Your Energy-Systems</h2>
-<ul class="energy-systems">
+<ul>
   <li
-    *ngFor="let energySystem of energySystems"
     (click)="onSelect(energySystem)"
-    [class.selected]="energySystem === selectedEnergySystem"
+    *ngFor="let energySystem of energySystems"
   >
-    <span class="badge">{{ energySystem.energySystemId }}</span>
+    <span>{{ energySystem.energySystemId }}</span>
     {{ energySystem.name }}
   </li>
 </ul>

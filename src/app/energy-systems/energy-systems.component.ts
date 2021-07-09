@@ -12,15 +12,12 @@ export class EnergySystemsComponent implements OnInit {
   energySystems: EnergySystem[] = [];
   selectedEnergySystem?: EnergySystem;
 
-  constructor(
-    private energySystemService: EnergySystemService,
-    private messageService: MessageService
-  ) {}
+  constructor(private energySystemService: EnergySystemService) {}
 
   onSelect(es: EnergySystem): void {
-    this.messageService.add(`Selected id ${es.energySystemId}`);
     this.selectedEnergySystem = es;
   }
+
   ngOnInit(): void {
     this.getEnergySystems();
   }

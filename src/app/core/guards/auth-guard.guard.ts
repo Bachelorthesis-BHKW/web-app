@@ -4,7 +4,6 @@ import {
   CanActivate,
   Router,
   RouterStateSnapshot,
-  UrlTree,
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { JwtService } from '../services/jwt.service';
@@ -19,8 +18,8 @@ export class AuthGuardGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | boolean {
-    if (state.url != '/login' && !this.jwtService.getJwt()) {
-      this.router.navigate(['/login']);
+    if (state.url != '/auth' && !this.jwtService.getJwt()) {
+      this.router.navigate(['/auth']);
       return false;
     }
     return true;

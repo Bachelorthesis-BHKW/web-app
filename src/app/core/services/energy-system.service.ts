@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { EnergySystem } from '../../shared/interfaces/EnergySystem';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { EsClientService } from './es-client.service';
 
 @Injectable({

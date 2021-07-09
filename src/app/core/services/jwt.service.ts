@@ -12,9 +12,11 @@ export class JwtService {
   setJwt(jwt: string): void {
     this.storage.setItem(JwtService.key, jwt);
   }
+
   getJwt(): string | null {
     return this.storage.getItem(JwtService.key);
   }
+
   clearJwt(): void {
     this.storage.removeItem(JwtService.key);
   }

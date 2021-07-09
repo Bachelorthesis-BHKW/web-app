@@ -1,13 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { JwtService } from '../core/services/jwt.service';
-import { UserService } from '../core/services/user.service';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
-import { MessageService } from '../core/services/message.service';
+import { UserService } from '../../core/services/user.service';
+import { FormBuilder, Validators } from '@angular/forms';
+import { MessageService } from '../../core/services/message.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -25,7 +19,6 @@ export class LoginComponent implements OnInit {
   });
 
   constructor(
-    private jwt: JwtService,
     private userService: UserService,
     private formBuilder: FormBuilder,
     private messageService: MessageService,
@@ -38,8 +31,8 @@ export class LoginComponent implements OnInit {
     const email = this.loginForm.value.emailControl;
     const password = this.loginForm.value.passwordControl;
     this.userService.login(email, password).subscribe(
-      (login) => {
-        this.jwt.setJwt(login.token);
+      () => {
+        this.userService.fetchUser();
         this.router.navigate(['/energy-systems']);
       },
       (error) => {
