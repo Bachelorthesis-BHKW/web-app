@@ -1,11 +1,23 @@
-<form (ngSubmit)="onLogin()" [formGroup]="loginForm">
-
-  <label for="email">E-Mail: </label>
-  <input formControlName="emailControl" id="email" type="email">
-
-  <label for="password">Password: </label>
-  <input formControlName="passwordControl" id="password" type="password">
-
-  <button [disabled]="!loginForm.valid" type="submit">Login</button>
-
-</form>
+<mat-card style="text-align: center">
+  <mat-card-title> Login </mat-card-title>
+  <form (ngSubmit)="onLogin()" [formGroup]="loginForm">
+    <mat-form-field appearance="fill">
+      <mat-label>E-Mail</mat-label>
+      <input matInput formControlName="emailControl" type="email" />
+    </mat-form-field>
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="passwordControl" type="password" />
+    </mat-form-field>
+    <br />
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="!loginForm.valid"
+      type="submit"
+    >
+      Login
+    </button>
+  </form>
+</mat-card>

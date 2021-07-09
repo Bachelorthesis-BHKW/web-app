@@ -1,8 +1,8 @@
-<h2>Current User</h2>
-<p *ngIf="currentUser">
+<h2 *ngIf="currentUser">Current User</h2>
+<span *ngIf="currentUser">
   Id: {{currentUser.userId}} <br>
   Name: {{currentUser.name}} <br>
   E-Mail: {{currentUser.email}} <br>
   Company: {{currentUser.company}} <br>
   <button (click)="logout()">Logout</button>
-</p>
+</span>

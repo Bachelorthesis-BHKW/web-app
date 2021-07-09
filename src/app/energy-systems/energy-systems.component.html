@@ -4,10 +4,11 @@
     (click)="onSelect(energySystem)"
     *ngFor="let energySystem of energySystems"
   >
-    <span>{{ energySystem.energySystemId }}</span>
+    {{ energySystem.energySystemId }}
     {{ energySystem.name }}
   </li>
 </ul>
+<button (click)="onNewEnergySystem()">Create new Energy-System</button>
 
 <app-energy-system-detail
   [energySystem]="selectedEnergySystem"

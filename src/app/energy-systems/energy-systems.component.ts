@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EnergySystem } from '../shared/interfaces/EnergySystem';
 import { EnergySystemService } from '../core/services/energy-system.service';
-import { MessageService } from '../core/services/message.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-energy-systems',
@@ -12,7 +12,10 @@ export class EnergySystemsComponent implements OnInit {
   energySystems: EnergySystem[] = [];
   selectedEnergySystem?: EnergySystem;
 
-  constructor(private energySystemService: EnergySystemService) {}
+  constructor(
+    private energySystemService: EnergySystemService,
+    private router: Router
+  ) {}
 
   onSelect(es: EnergySystem): void {
     this.selectedEnergySystem = es;
@@ -26,5 +29,9 @@ export class EnergySystemsComponent implements OnInit {
     this.energySystemService
       .getEnergySystems()
       .subscribe((energySystems) => (this.energySystems = energySystems));
+  }
+
+  onNewEnergySystem(): void {
+    this.router.navigate(['/energy-systems/new']);
   }
 }
