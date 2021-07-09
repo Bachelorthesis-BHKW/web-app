@@ -1,8 +1,15 @@
 <div *ngIf="energySystem">
-  <h2>
-    Details of <span id="es-name">{{ energySystem.name }}</span>
-  </h2>
-  <div *ngFor="let attribute of energySystem.valueOf() | keyvalue">
-    {{ attribute.key }}: {{ attribute.value }}
-  </div>
+  <mat-card>
+    <mat-card-title>
+      {{ energySystem.name }}
+    </mat-card-title>
+    <div
+      id="es-attribute-key"
+      *ngFor="let attribute of energySystem.valueOf() | keyvalue"
+    >
+      {{ attribute.key }}:
+      {{ attribute.value }}
+    </div>
+    <button mat-raised-button color="primary">Speichern</button>
+  </mat-card>
 </div>

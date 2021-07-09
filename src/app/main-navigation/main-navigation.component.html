@@ -11,6 +11,7 @@
     <mat-nav-list *ngIf="isLoggedIn">
       <a mat-list-item [routerLink]="['/energy-systems']">Energy-Systems</a>
     </mat-nav-list>
+    <app-status></app-status>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
@@ -24,7 +25,6 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>{{ title }}</span>
-      <app-status></app-status>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

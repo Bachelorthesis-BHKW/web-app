@@ -1,14 +1,20 @@
 <h2>Your Energy-Systems</h2>
-<ul>
-  <li
+<mat-list>
+  <mat-card
+    class="energy-system-card"
     (click)="onSelect(energySystem)"
     *ngFor="let energySystem of energySystems"
+    [class.]
   >
-    {{ energySystem.energySystemId }}
-    {{ energySystem.name }}
-  </li>
-</ul>
-<button (click)="onNewEnergySystem()">Create new Energy-System</button>
+    <mat-card-content>
+      <span id="es-id">{{ energySystem.energySystemId }}</span>
+      {{ energySystem.name }}
+    </mat-card-content>
+  </mat-card>
+</mat-list>
+<button mat-raised-button color="primary" (click)="onNewEnergySystem()">
+  Create new Energy-System
+</button>
 
 <app-energy-system-detail
   [energySystem]="selectedEnergySystem"
