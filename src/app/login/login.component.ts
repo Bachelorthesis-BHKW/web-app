@@ -8,6 +8,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { MessageService } from '../core/services/message.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,10 @@ import { MessageService } from '../core/services/message.service';
 })
 export class LoginComponent implements OnInit {
   loginForm = this.formBuilder.group({
-    emailControl: ['', Validators.required],
+    emailControl: [
+      '',
+      Validators.compose([Validators.required, Validators.email]),
+    ],
     passwordControl: ['', Validators.required],
   });
 
@@ -24,7 +28,8 @@ export class LoginComponent implements OnInit {
     private jwt: JwtService,
     private userService: UserService,
     private formBuilder: FormBuilder,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
@@ -35,6 +40,7 @@ export class LoginComponent implements OnInit {
     this.userService.login(email, password).subscribe(
       (login) => {
         this.jwt.setJwt(login.token);
+        this.router.navigate(['/energy-systems']);
       },
       (error) => {
         this.messageService.add(error);
