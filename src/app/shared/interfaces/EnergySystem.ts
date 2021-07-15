@@ -42,10 +42,10 @@ export const emptyEnergySystem: EnergySystem = {
   qThZaehlerGetrennt: false,
   gewichtungsfaktorZufall: 0,
 
-  algorithmTrigger: AlgorithmTrigger.time,
+  algorithmTrigger: AlgorithmTrigger.post,
   cronTriggerTime: '',
-  maxHistoryDays: 0,
-  consumptionPostIntervalMin: 0,
+  maxHistoryDays: 3,
+  consumptionPostIntervalMin: 15,
   latitude: 0,
   longitude: 0,
   region: '',

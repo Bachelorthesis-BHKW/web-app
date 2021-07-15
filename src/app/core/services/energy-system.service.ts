@@ -37,6 +37,12 @@ export class EnergySystemService {
     );
   }
 
+  deleteEnergySystem(energySystem: EnergySystem): Observable<void> {
+    return this.esClient.delete(
+      EnergySystemService.energySystemUriWithId(energySystem.energySystemId)
+    );
+  }
+
   patchEnergySystem(
     energySystemId: number,
     patch: Partial<EnergySystem>

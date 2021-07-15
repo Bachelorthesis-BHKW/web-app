@@ -13,6 +13,13 @@
         <mat-card-content>
           <span id="es-id">{{ energySystem.energySystemId }}</span>
           {{ energySystem.name }}
+          <button
+            mat-raised-button
+            fxFlexAlign="end"
+            (click)="onDelete(energySystem)"
+          >
+            Delete
+          </button>
         </mat-card-content>
       </mat-card>
     </mat-list>

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { EnergySystem } from '../shared/interfaces/EnergySystem';
 import { EnergySystemService } from '../core/services/energy-system.service';
-import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateEnergySystemComponent } from './create-energy-system/create-energy-system.component';
+import { SnackbarService } from '../core/services/snackbar.service';
 
 @Component({
   selector: 'app-energy-systems',
@@ -16,16 +16,29 @@ export class EnergySystemsComponent implements OnInit {
 
   constructor(
     private energySystemService: EnergySystemService,
-    private router: Router,
+    private snackbarService: SnackbarService,
     public dialog: MatDialog
   ) {}
 
-  onSelect(es: EnergySystem): void {
-    this.selectedEnergySystem = es;
-  }
-
   ngOnInit(): void {
     this.getEnergySystems();
+  }
+
+  onSelect(energySystem: EnergySystem): void {
+    this.selectedEnergySystem = energySystem;
+  }
+
+  onDelete(energySystem: EnergySystem): void {
+    this.energySystemService.deleteEnergySystem(energySystem).subscribe(
+      () => {
+        this.snackbarService.open('Success!');
+        this.getEnergySystems();
+      },
+      (error) => {
+        this.snackbarService.open('Error!');
+        console.warn(error);
+      }
+    );
   }
 
   getEnergySystems(): void {
@@ -35,8 +48,11 @@ export class EnergySystemsComponent implements OnInit {
   }
 
   onNewEnergySystem(): void {
-    this.dialog.open(CreateEnergySystemComponent, {
-      maxHeight: '80vh',
-    });
+    this.dialog
+      .open(CreateEnergySystemComponent, {
+        maxHeight: '80vh',
+      })
+      .afterClosed()
+      .subscribe(() => this.getEnergySystems());
   }
 }

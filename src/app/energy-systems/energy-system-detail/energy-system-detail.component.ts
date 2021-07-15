@@ -21,6 +21,11 @@ export class EnergySystemDetailComponent implements OnChanges {
     private snackBarService: SnackbarService
   ) {}
 
+  ngOnChanges(changes: SimpleChanges) {
+    if (this.energySystem && !this.originalEnergySystem.energySystemId)
+      this.originalEnergySystem = { ...this.energySystem };
+  }
+
   onSave(energySystem: EnergySystem): void {
     const patch = JsonPatchGenerator.generatePatch(
       this.originalEnergySystem,
@@ -39,10 +44,5 @@ export class EnergySystemDetailComponent implements OnChanges {
     } else {
       this.snackBarService.open('No changes to save!');
     }
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    if (this.energySystem && !this.originalEnergySystem.energySystemId)
-      this.originalEnergySystem = { ...this.energySystem };
   }
 }
