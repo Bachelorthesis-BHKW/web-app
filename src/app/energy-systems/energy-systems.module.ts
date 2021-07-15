@@ -13,9 +13,17 @@ import {
   MatFormFieldModule,
 } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { CreateEnergySystemComponent } from './create-energy-system/create-energy-system.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AppModule } from '../app.module';
+import { CoreModule } from '../core/components/core.module';
 
 @NgModule({
-  declarations: [EnergySystemsComponent, EnergySystemDetailComponent],
+  declarations: [
+    EnergySystemsComponent,
+    EnergySystemDetailComponent,
+    CreateEnergySystemComponent,
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -26,6 +34,8 @@ import { MatInputModule } from '@angular/material/input';
     FlexModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDialogModule,
+    CoreModule,
   ],
 })
 export class EnergySystemsModule {}

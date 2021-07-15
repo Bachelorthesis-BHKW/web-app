@@ -30,6 +30,13 @@ export class EnergySystemService {
     );
   }
 
+  postEnergySystem(energySystem: EnergySystem): Observable<EnergySystem> {
+    return this.esClient.post<EnergySystem>(
+      EnergySystemService.energySystemUri,
+      energySystem
+    );
+  }
+
   patchEnergySystem(
     energySystemId: number,
     patch: Partial<EnergySystem>

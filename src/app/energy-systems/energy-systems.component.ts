@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { EnergySystem } from '../shared/interfaces/EnergySystem';
 import { EnergySystemService } from '../core/services/energy-system.service';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { CreateEnergySystemComponent } from './create-energy-system/create-energy-system.component';
 
 @Component({
   selector: 'app-energy-systems',
@@ -14,7 +16,8 @@ export class EnergySystemsComponent implements OnInit {
 
   constructor(
     private energySystemService: EnergySystemService,
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog
   ) {}
 
   onSelect(es: EnergySystem): void {
@@ -32,6 +35,8 @@ export class EnergySystemsComponent implements OnInit {
   }
 
   onNewEnergySystem(): void {
-    this.router.navigate(['/energy-systems/new']);
+    this.dialog.open(CreateEnergySystemComponent, {
+      maxHeight: '80vh',
+    });
   }
 }

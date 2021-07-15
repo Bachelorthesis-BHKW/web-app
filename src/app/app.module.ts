@@ -15,10 +15,17 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { EditEntityComponent } from './core/components/edit-entity/edit-entity.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { FlexModule } from '@angular/flex-layout';
+import { CoreModule } from './core/components/core.module';
 
 @NgModule({
   declarations: [AppComponent, MainNavigationComponent],
   imports: [
+    CoreModule,
     EnergySystemsModule,
     AuthModule,
     BrowserModule,
@@ -35,5 +42,6 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
   ],
   providers: [],
   bootstrap: [AppComponent],
+  exports: [],
 })
 export class AppModule {}

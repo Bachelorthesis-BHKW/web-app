@@ -41,10 +41,6 @@ export class EnergySystemDetailComponent implements OnChanges {
     }
   }
 
-  customTrackBy(index: number) {
-    return index;
-  }
-
   ngOnChanges(changes: SimpleChanges) {
     if (this.energySystem && !this.originalEnergySystem.energySystemId)
       this.originalEnergySystem = { ...this.energySystem };

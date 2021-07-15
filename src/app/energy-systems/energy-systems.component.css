@@ -11,6 +11,11 @@ h2 {
   background-color: gray;
 }
 
+.energy-system-card:hover {
+  background-color: darkgray;
+  cursor: pointer;
+}
+
 #es-id {
   font-size: x-large;
 }
