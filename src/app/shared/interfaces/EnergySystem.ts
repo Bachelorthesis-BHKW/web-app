@@ -4,7 +4,7 @@ export enum AlgorithmTrigger {
 }
 
 export interface EnergySystem {
-  energySystemId?: number;
+  energySystemId: number;
   userId: number;
   name: string;
   nFahrplan: number;
@@ -26,3 +26,27 @@ export interface EnergySystem {
   longitude: number;
   region: string;
 }
+
+export const emptyEnergySystem: EnergySystem = {
+  energySystemId: 0,
+  userId: 0,
+  name: '',
+  nFahrplan: 0,
+  untermengeNFahrplan: 0,
+  optimierungshorizontMin: 0,
+  optimierungsgroesse: 0,
+  deltaT: 0,
+  stetigkeitsfaktor: 0,
+  prognosemethodeTh: 0,
+  qThZaehlerGesamt: false,
+  qThZaehlerGetrennt: false,
+  gewichtungsfaktorZufall: 0,
+
+  algorithmTrigger: AlgorithmTrigger.time,
+  cronTriggerTime: '',
+  maxHistoryDays: 0,
+  consumptionPostIntervalMin: 0,
+  latitude: 0,
+  longitude: 0,
+  region: '',
+};
