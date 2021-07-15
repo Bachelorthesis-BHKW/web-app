@@ -8,8 +8,13 @@ h2 {
 
 .energy-system-card {
   margin: 1%;
+  background-color: gray;
 }
 
 #es-id {
   font-size: x-large;
+}
+
+.row {
+  margin: 1%;
 }

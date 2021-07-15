@@ -4,32 +4,26 @@
       {{ energySystem.name }}
     </mat-card-title>
     <div
-      id="es-attribute-key"
+      id="es-attribute-keys"
       *ngFor="
         let attribute of energySystem.valueOf() | keyvalue;
         trackBy: customTrackBy
       "
     >
-      {{ attribute.key }}
-      <div
-        *ngIf="
-          ['energySystemId', 'userId'].indexOf(attribute.key.toString()) < 0;
-          else attributeLabel
-        "
-      >
+      <mat-form-field>
+        <mat-label>{{ attribute.key }}</mat-label>
         <input
+          matInput
+          [disabled]="
+            ['energySystemId', 'userId'].indexOf(attribute.key.toString()) >= 0
+          "
           id="{{ attribute.key }}"
           [(ngModel)]="energySystem[attribute.key]"
         />
-      </div>
-      <ng-template #attributeLabel>
-        <div>
-          {{ attribute.value }}
-        </div>
-      </ng-template>
+      </mat-form-field>
     </div>
     <button mat-raised-button color="primary" (click)="onSave(energySystem)">
-      Speichern
+      Save
     </button>
   </mat-card>
 </div>
