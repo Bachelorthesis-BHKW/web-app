@@ -20,8 +20,5 @@ export class MainNavigationComponent {
       shareReplay()
     );
 
-  constructor(
-    private breakpointObserver: BreakpointObserver,
-    private userService: UserService
-  ) {}
+  constructor(private breakpointObserver: BreakpointObserver) {}
 }

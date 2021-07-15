@@ -4,8 +4,8 @@ import {
   EnergySystem,
 } from '../../shared/interfaces/EnergySystem';
 import { EnergySystemService } from '../../core/services/energy-system.service';
-import { MessageService } from '../../core/services/message.service';
 import { JsonPatchGenerator } from '../../shared/helpers/JsonPatchGenerator';
+import { SnackbarService } from '../../core/services/snackbar.service';
 
 @Component({
   selector: 'app-energy-system-detail',
@@ -18,7 +18,7 @@ export class EnergySystemDetailComponent implements OnChanges {
 
   constructor(
     private energySystemService: EnergySystemService,
-    private messageService: MessageService
+    private snackBarService: SnackbarService
   ) {}
 
   onSave(energySystem: EnergySystem): void {
@@ -26,9 +26,19 @@ export class EnergySystemDetailComponent implements OnChanges {
       this.originalEnergySystem,
       energySystem
     );
-    this.energySystemService
-      .patchEnergySystem(energySystem.energySystemId, patch)
-      .subscribe(() => this.messageService.add('Success!'));
+    if (patch) {
+      this.energySystemService
+        .patchEnergySystem(energySystem.energySystemId, patch)
+        .subscribe(
+          () => this.snackBarService.open('Success!'),
+          (error) => {
+            this.snackBarService.open('An error occurred!');
+            console.warn(error);
+          }
+        );
+    } else {
+      this.snackBarService.open('No changes to save!');
+    }
   }
 
   customTrackBy(index: number) {

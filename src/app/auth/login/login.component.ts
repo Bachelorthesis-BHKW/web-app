@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../core/services/user.service';
 import { FormBuilder, Validators } from '@angular/forms';
-import { MessageService } from '../../core/services/message.service';
 import { Router } from '@angular/router';
+import { SnackbarService } from '../../core/services/snackbar.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   loginForm = this.formBuilder.group({
     emailControl: [
       '',
@@ -21,11 +21,9 @@ export class LoginComponent implements OnInit {
   constructor(
     private userService: UserService,
     private formBuilder: FormBuilder,
-    private messageService: MessageService,
-    private router: Router
+    private router: Router,
+    private snackBarService: SnackbarService
   ) {}
-
-  ngOnInit(): void {}
 
   onLogin(): void {
     const email = this.loginForm.value.emailControl;
@@ -36,7 +34,8 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/energy-systems']);
       },
       (error) => {
-        this.messageService.add(error);
+        this.snackBarService.open('Error logging in');
+        console.warn(error);
       }
     );
   }
