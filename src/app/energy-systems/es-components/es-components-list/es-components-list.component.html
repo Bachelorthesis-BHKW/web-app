@@ -5,8 +5,8 @@
   <mat-list>
     <mat-card class="energy-system-card" *ngFor="let component of components">
       <mat-card-content>
-        <span id="es-id">{{ component.esComponentId }}</span>
-        {{ component.name }}
+        <span id="es-id">{{ component.name }}</span>
+        ID: {{ component.esComponentId }}
         <button
           mat-raised-button
           fxFlexAlign="end"

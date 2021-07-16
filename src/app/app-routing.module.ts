@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EnergySystemsComponent } from './energy-systems/energy-systems.component';
+import { EnergySystemsComponent } from './energy-systems/energy-system-list/energy-systems.component';
 import { AuthGuardGuard } from './core/guards/auth-guard.guard';
 
 const routes: Routes = [

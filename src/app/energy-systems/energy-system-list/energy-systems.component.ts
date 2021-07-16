@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { EnergySystem } from '../shared/interfaces/EnergySystem';
-import { EnergySystemService } from '../core/services/energy-system.service';
+import { EnergySystem } from '../../shared/interfaces/EnergySystem';
+import { EnergySystemService } from '../../core/services/energy-system.service';
 import { MatDialog } from '@angular/material/dialog';
-import { CreateEnergySystemComponent } from './create-energy-system/create-energy-system.component';
-import { SnackbarService } from '../core/services/snackbar.service';
+import { CreateEnergySystemComponent } from '../create-energy-system/create-energy-system.component';
+import { SnackbarService } from '../../core/services/snackbar.service';
 
 @Component({
   selector: 'app-energy-systems',
