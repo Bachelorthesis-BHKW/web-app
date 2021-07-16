@@ -1,17 +1,17 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { EnergySystem } from '../../shared/interfaces/EnergySystem';
-import { EsComponentService } from '../../core/services/es-component.service';
-import ESComponent from '../../shared/interfaces/ESComponent';
-import { SnackbarService } from '../../core/services/snackbar.service';
+import { EnergySystem } from '../../../shared/interfaces/EnergySystem';
+import { EsComponentService } from '../../../core/services/es-component.service';
+import ESComponent from '../../../shared/interfaces/ESComponent';
+import { SnackbarService } from '../../../core/services/snackbar.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateEsComponentComponent } from '../create-es-component/create-es-component.component';
 
 @Component({
-  selector: 'app-es-components',
-  templateUrl: './es-components.component.html',
-  styleUrls: ['./es-components.component.css'],
+  selector: 'app-es-components-list',
+  templateUrl: './es-components-list.component.html',
+  styleUrls: ['./es-components-list.component.css'],
 })
-export class EsComponentsComponent implements OnChanges {
+export class EsComponentsListComponent implements OnChanges {
   @Input() energySystem?: EnergySystem;
   components: ESComponent[] = [];
   selectedComponent?: ESComponent;

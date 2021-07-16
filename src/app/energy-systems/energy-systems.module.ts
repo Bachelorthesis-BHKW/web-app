@@ -13,16 +13,16 @@ import { MatInputModule } from '@angular/material/input';
 import { CreateEnergySystemComponent } from './create-energy-system/create-energy-system.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CoreModule } from '../core/components/core.module';
-import { EsComponentsComponent } from './es-components/es-components.component';
-import { EsComponentsDetailComponent } from './es-components-detail/es-components-detail.component';
-import { CreateEsComponentComponent } from './create-es-component/create-es-component.component';
+import { EsComponentsListComponent } from './es-components/es-components-list/es-components-list.component';
+import { EsComponentsDetailComponent } from './es-components/es-components-detail/es-components-detail.component';
+import { CreateEsComponentComponent } from './es-components/create-es-component/create-es-component.component';
 
 @NgModule({
   declarations: [
     EnergySystemsComponent,
     EnergySystemDetailComponent,
     CreateEnergySystemComponent,
-    EsComponentsComponent,
+    EsComponentsListComponent,
     EsComponentsDetailComponent,
     CreateEsComponentComponent,
   ],

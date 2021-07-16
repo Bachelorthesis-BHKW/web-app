@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import ESComponent from '../../shared/interfaces/ESComponent';
+import ESComponent from '../../../shared/interfaces/ESComponent';
 
 @Component({
   selector: 'app-es-components-detail',

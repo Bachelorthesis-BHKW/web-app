@@ -1,11 +1,11 @@
 import { Component, Inject } from '@angular/core';
-import { EnergySystem } from '../../shared/interfaces/EnergySystem';
+import { EnergySystem } from '../../../shared/interfaces/EnergySystem';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { SnackbarService } from '../../core/services/snackbar.service';
+import { SnackbarService } from '../../../core/services/snackbar.service';
 import ESComponent, {
   emptyESComponent,
-} from '../../shared/interfaces/ESComponent';
-import { EsComponentService } from '../../core/services/es-component.service';
+} from '../../../shared/interfaces/ESComponent';
+import { EsComponentService } from '../../../core/services/es-component.service';
 
 @Component({
   selector: 'app-create-es-component',
