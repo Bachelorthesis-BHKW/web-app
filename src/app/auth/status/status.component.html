@@ -1,0 +1,10 @@
+<h2 *ngIf="currentUser">Current User</h2>
+<mat-card *ngIf="currentUser">
+  <mat-card-content>
+    ID: {{ currentUser.userId }} <br />
+    Name: {{ currentUser.name }} <br />
+    E-Mail: {{ currentUser.email }} <br />
+    Company: {{ currentUser.company }} <br />
+  </mat-card-content>
+</mat-card>
+<button mat-raised-button color="warn" (click)="logout()">Logout</button>

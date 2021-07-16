@@ -1,0 +1,8 @@
+<app-edit-entity
+  [entity]="esComponent"
+  [disabledFields]="['esComponentId', 'energySystemId']"
+>
+</app-edit-entity>
+<button mat-raised-button color="primary" (click)="onAddComponent(esComponent)">
+  Create
+</button>

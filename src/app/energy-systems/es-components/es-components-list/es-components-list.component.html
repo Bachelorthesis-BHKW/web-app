@@ -1,0 +1,45 @@
+<div *ngIf="energySystem">
+  <button mat-raised-button color="primary" (click)="onAdd(energySystem)">
+    Add Component
+  </button>
+  <mat-list>
+    <mat-card class="energy-system-card" *ngFor="let component of components">
+      <mat-card-content>
+        <span id="es-id">{{ component.name }}</span>
+        ID: {{ component.esComponentId }}
+        <button
+          mat-raised-button
+          fxFlexAlign="end"
+          color="warn"
+          id="delete-button"
+          (click)="onDelete(component, energySystem)"
+        >
+          Delete
+        </button>
+        <button
+          mat-raised-button
+          fxFlexAlign="end"
+          color="accent"
+          id="edit-button"
+          (click)="onSelect(component)"
+        >
+          <span
+            *ngIf="
+              selectedComponent !== undefined &&
+                selectedComponent.esComponentId === component.esComponentId;
+              else showBlock
+            "
+          >
+            Hide
+          </span>
+          <ng-template #showBlock>Show</ng-template>
+        </button>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <app-es-components-detail
+        [esComponent]="selectedComponent"
+      ></app-es-components-detail>
+    </mat-card>
+  </mat-list>
+</div>

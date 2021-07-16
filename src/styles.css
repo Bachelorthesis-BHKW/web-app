@@ -1,25 +1,9 @@
-/* Application-wide Styles */
-h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
-}
-h2,
-h3 {
-  color: #444;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: lighter;
+html,
+body {
+  height: 100%;
+  background-color: #2b2b2b;
 }
 body {
-  margin: 2em;
-}
-body,
-input[type="text"],
-button {
-  color: #333;
-  font-family: Cambria, Georgia, serif;
-}
-/* everywhere else */
-* {
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
