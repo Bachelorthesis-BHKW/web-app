@@ -6,7 +6,9 @@
     <mat-label>{{ attribute.key }}</mat-label>
     <input
       matInput
-      [disabled]="disabledFields.indexOf(attribute.key.toString()) >= 0"
+      [disabled]="
+        disabledFields.indexOf(attribute.key.toString()) >= 0 || !editable
+      "
       id="{{ attribute.key }}"
       [(ngModel)]="entity[attribute.key]"
     />

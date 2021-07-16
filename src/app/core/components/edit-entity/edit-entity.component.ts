@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-edit-entity',
@@ -6,6 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./edit-entity.component.css'],
 })
 export class EditEntityComponent {
+  @Input() editable = true;
   @Input() entity: Object;
   @Input() disabledFields: string[];
 

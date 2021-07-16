@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import ESComponent from '../../shared/interfaces/ESComponent';
 
 @Component({
   selector: 'app-es-components-detail',
@@ -6,5 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./es-components-detail.component.css'],
 })
 export class EsComponentsDetailComponent {
+  @Input() esComponent?: ESComponent;
+
   constructor() {}
 }

@@ -2,6 +2,7 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { EnergySystem } from '../../shared/interfaces/EnergySystem';
 import { EsComponentService } from '../../core/services/es-component.service';
 import ESComponent from '../../shared/interfaces/ESComponent';
+import { SnackbarService } from '../../core/services/snackbar.service';
 
 @Component({
   selector: 'app-es-components',
@@ -13,22 +14,38 @@ export class EsComponentsComponent implements OnChanges {
   components: ESComponent[] = [];
   selectedComponent?: ESComponent;
 
-  constructor(private esComponentService: EsComponentService) {}
+  constructor(
+    private esComponentService: EsComponentService,
+    private snackBarService: SnackbarService
+  ) {}
 
   ngOnChanges(changes: SimpleChanges) {
     if (this.energySystem) this.getComponentsForEnergySystem(this.energySystem);
   }
 
   onSelect(component: ESComponent): void {
-    this.selectedComponent = component;
+    if (
+      this.selectedComponent &&
+      this.selectedComponent.esComponentId === component.esComponentId
+    )
+      this.selectedComponent = undefined;
+    else this.selectedComponent = component;
   }
 
   onDelete(component: ESComponent, energySystem: EnergySystem): void {
     this.esComponentService
       .deleteESComponent(energySystem, component)
-      .subscribe(() => {
-        this.getComponentsForEnergySystem(energySystem);
-      });
+      .subscribe(
+        () => {
+          this.snackBarService.open('Success!');
+          this.getComponentsForEnergySystem(energySystem);
+          this.selectedComponent = undefined;
+        },
+        (error) => {
+          this.snackBarService.open('An error occurred!');
+          console.warn(error);
+        }
+      );
   }
 
   getComponentsForEnergySystem(energySystem: EnergySystem): void {
