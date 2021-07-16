@@ -3,6 +3,8 @@ import { EnergySystem } from '../../shared/interfaces/EnergySystem';
 import { EsComponentService } from '../../core/services/es-component.service';
 import ESComponent from '../../shared/interfaces/ESComponent';
 import { SnackbarService } from '../../core/services/snackbar.service';
+import { MatDialog } from '@angular/material/dialog';
+import { CreateEsComponentComponent } from '../create-es-component/create-es-component.component';
 
 @Component({
   selector: 'app-es-components',
@@ -16,7 +18,8 @@ export class EsComponentsComponent implements OnChanges {
 
   constructor(
     private esComponentService: EsComponentService,
-    private snackBarService: SnackbarService
+    private snackBarService: SnackbarService,
+    public dialog: MatDialog
   ) {}
 
   ngOnChanges(changes: SimpleChanges) {
@@ -46,6 +49,16 @@ export class EsComponentsComponent implements OnChanges {
           console.warn(error);
         }
       );
+  }
+
+  onAdd(energySystem: EnergySystem): void {
+    this.dialog
+      .open(CreateEsComponentComponent, {
+        data: energySystem,
+        maxHeight: '80vh',
+      })
+      .afterClosed()
+      .subscribe(() => this.getComponentsForEnergySystem(energySystem));
   }
 
   getComponentsForEnergySystem(energySystem: EnergySystem): void {

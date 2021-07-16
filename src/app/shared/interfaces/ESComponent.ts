@@ -22,3 +22,15 @@ enum ESComponentType {
   ST = 'st',
   GS = 'gs',
 }
+
+export const emptyESComponent: ESComponent = {
+  esComponentId: 0,
+  name: '',
+  circularBufferPointer: 0,
+  circularBufferMax: 0,
+  kenngroessen: {},
+  type: ESComponentType.Generic,
+  currentsPostIntervalMin: 1,
+  energySystemId: 0,
+  maxHistoryDays: 3,
+};

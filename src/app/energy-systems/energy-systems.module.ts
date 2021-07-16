@@ -8,17 +8,14 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { FlexModule } from '@angular/flex-layout';
-import {
-  MatFormFieldControl,
-  MatFormFieldModule,
-} from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { CreateEnergySystemComponent } from './create-energy-system/create-energy-system.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { AppModule } from '../app.module';
 import { CoreModule } from '../core/components/core.module';
 import { EsComponentsComponent } from './es-components/es-components.component';
 import { EsComponentsDetailComponent } from './es-components-detail/es-components-detail.component';
+import { CreateEsComponentComponent } from './create-es-component/create-es-component.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +24,7 @@ import { EsComponentsDetailComponent } from './es-components-detail/es-component
     CreateEnergySystemComponent,
     EsComponentsComponent,
     EsComponentsDetailComponent,
+    CreateEsComponentComponent,
   ],
   imports: [
     CommonModule,

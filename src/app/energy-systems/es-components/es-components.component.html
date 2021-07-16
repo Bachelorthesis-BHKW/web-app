@@ -1,5 +1,7 @@
 <div *ngIf="energySystem">
-  <button mat-raised-button color="primary">Add Component</button>
+  <button mat-raised-button color="primary" (click)="onAdd(energySystem)">
+    Add Component
+  </button>
   <mat-list>
     <mat-card class="energy-system-card" *ngFor="let component of components">
       <mat-card-content>
