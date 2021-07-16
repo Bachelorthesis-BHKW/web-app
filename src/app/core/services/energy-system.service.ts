@@ -14,7 +14,7 @@ export class EnergySystemService {
 
   constructor(private esClient: EsClientService) {}
 
-  static energySystemUriWithId(id: number): string {
+  private static energySystemUriWithId(id: number): string {
     return this.energySystemIdUri.replace(EnergySystemService.id, String(id));
   }
 

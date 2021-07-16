@@ -1,0 +1,28 @@
+<div *ngIf="energySystem">
+  <mat-list>
+    <mat-card class="energy-system-card" *ngFor="let component of components">
+      <mat-card-content>
+        <span id="es-id">{{ component.esComponentId }}</span>
+        {{ component.name }}
+        <button
+          mat-raised-button
+          fxFlexAlign="end"
+          color="warn"
+          id="delete-button"
+          (click)="onDelete(component, energySystem)"
+        >
+          Delete
+        </button>
+        <button
+          mat-raised-button
+          fxFlexAlign="end"
+          color="accent"
+          id="edit-button"
+          (click)="onSelect(component)"
+        >
+          Show
+        </button>
+      </mat-card-content>
+    </mat-card>
+  </mat-list>
+</div>

@@ -7,7 +7,6 @@
     <mat-list>
       <mat-card
         class="energy-system-card"
-        (click)="onSelect(energySystem)"
         *ngFor="let energySystem of energySystems"
       >
         <mat-card-content>
@@ -16,9 +15,20 @@
           <button
             mat-raised-button
             fxFlexAlign="end"
+            color="warn"
+            id="delete-button"
             (click)="onDelete(energySystem)"
           >
             Delete
+          </button>
+          <button
+            mat-raised-button
+            fxFlexAlign="end"
+            color="accent"
+            id="edit-button"
+            (click)="onSelect(energySystem)"
+          >
+            Show
           </button>
         </mat-card-content>
       </mat-card>
@@ -29,5 +39,9 @@
       [energySystem]="selectedEnergySystem"
     ></app-energy-system-detail>
   </div>
-  <div fxFlex class="row"></div>
+  <div fxFlex class="row">
+    <app-es-components
+      [energySystem]="selectedEnergySystem"
+    ></app-es-components>
+  </div>
 </div>

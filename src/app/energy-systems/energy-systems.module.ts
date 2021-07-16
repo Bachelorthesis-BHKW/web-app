@@ -17,12 +17,16 @@ import { CreateEnergySystemComponent } from './create-energy-system/create-energ
 import { MatDialogModule } from '@angular/material/dialog';
 import { AppModule } from '../app.module';
 import { CoreModule } from '../core/components/core.module';
+import { EsComponentsComponent } from './es-components/es-components.component';
+import { EsComponentsDetailComponent } from './es-components-detail/es-components-detail.component';
 
 @NgModule({
   declarations: [
     EnergySystemsComponent,
     EnergySystemDetailComponent,
     CreateEnergySystemComponent,
+    EsComponentsComponent,
+    EsComponentsDetailComponent,
   ],
   imports: [
     CommonModule,
