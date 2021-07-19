@@ -5,7 +5,7 @@ export default interface ESComponent {
   energySystemId: number;
   name: string;
   type: ESComponentType;
-  kenngroessen: Component;
+  kenngroessen: Parameters;
 
   currentsPostIntervalMin: number;
   maxHistoryDays: number;
@@ -13,7 +13,7 @@ export default interface ESComponent {
   circularBufferPointer: number;
 }
 
-export interface Component {}
+export interface Parameters {}
 
 export const emptyESComponent: ESComponent = {
   esComponentId: 0,
@@ -21,7 +21,7 @@ export const emptyESComponent: ESComponent = {
   circularBufferPointer: 0,
   circularBufferMax: 0,
   kenngroessen: {},
-  type: ESComponentType.Generic,
+  type: ESComponentType.CHP,
   currentsPostIntervalMin: 1,
   energySystemId: 0,
   maxHistoryDays: 3,

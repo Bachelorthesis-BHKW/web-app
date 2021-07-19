@@ -1,6 +1,6 @@
-import { Component } from './ESComponent';
+import { Parameters } from './ESComponent';
 
-export interface CHP extends Component {
+export interface CHP extends Parameters {
   p_el_max_kW: number;
   qDot_th_max_kW: number;
   mindestlaufzeit_min: number;
@@ -13,3 +13,17 @@ export interface CHP extends Component {
   modulationsgrad_el: number[];
   modulationsgrad_th: number[];
 }
+
+export const emptyCHP: CHP = {
+  p_el_max_kW: 0,
+  qDot_th_max_kW: 0,
+  mindestlaufzeit_min: 0,
+  mindestruhezeit_min: 0,
+  anlaufzeit_th90_min: 0,
+  verzugszeit_th_min: 0,
+  anlaufzeit_el90_min: 0,
+  verzugszeit_el_min: 0,
+  modulation: false,
+  modulationsgrad_el: [],
+  modulationsgrad_th: [],
+};
