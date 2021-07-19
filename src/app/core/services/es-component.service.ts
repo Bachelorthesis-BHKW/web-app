@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { EsClientService } from './es-client.service';
 import { Observable } from 'rxjs';
 import { EnergySystem } from '../../shared/interfaces/EnergySystem';
-import ESComponent from '../../shared/interfaces/ESComponent';
+import ESComponent from '../../shared/interfaces/es-components/ESComponent';
 
 @Injectable({
   providedIn: 'root',

@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { EnergySystem } from '../../../shared/interfaces/EnergySystem';
 import { EsComponentService } from '../../../core/services/es-component.service';
-import ESComponent from '../../../shared/interfaces/ESComponent';
+import ESComponent from '../../../shared/interfaces/es-components/ESComponent';
 import { SnackbarService } from '../../../core/services/snackbar.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateEsComponentComponent } from '../create-es-component/create-es-component.component';

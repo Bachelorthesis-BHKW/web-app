@@ -4,7 +4,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { SnackbarService } from '../../../core/services/snackbar.service';
 import ESComponent, {
   emptyESComponent,
-} from '../../../shared/interfaces/ESComponent';
+} from '../../../shared/interfaces/es-components/ESComponent';
 import { EsComponentService } from '../../../core/services/es-component.service';
 
 @Component({

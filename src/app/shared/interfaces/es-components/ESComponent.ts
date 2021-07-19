@@ -1,3 +1,5 @@
+import { ESComponentType } from './ESComponentType';
+
 export default interface ESComponent {
   esComponentId: number;
   energySystemId: number;
@@ -11,17 +13,7 @@ export default interface ESComponent {
   circularBufferPointer: number;
 }
 
-interface Component {}
-enum ESComponentType {
-  Generic = 'generic',
-  CHP = 'chp',
-  Battery = 'battery',
-  PV = 'pv',
-  TES = 'tes',
-  SLK = 'slk',
-  ST = 'st',
-  GS = 'gs',
-}
+export interface Component {}
 
 export const emptyESComponent: ESComponent = {
   esComponentId: 0,
