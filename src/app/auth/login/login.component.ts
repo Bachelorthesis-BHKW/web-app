@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { UserService } from '../../core/services/user.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -31,7 +31,7 @@ export class LoginComponent {
     this.userService.login(email, password).subscribe(
       () => {
         this.userService.fetchUser();
-        this.router.navigate(['/energy-systems']);
+        this.router.navigate(['']);
       },
       (error) => {
         this.snackBarService.open('Error logging in');

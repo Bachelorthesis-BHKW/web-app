@@ -20,5 +20,12 @@ export class MainNavigationComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(
+    private userService: UserService,
+    private breakpointObserver: BreakpointObserver
+  ) {
+    this.userService.getUserObservable().subscribe((user) => {
+      this.isLoggedIn = user != undefined;
+    });
+  }
 }

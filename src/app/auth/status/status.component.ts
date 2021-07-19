@@ -26,6 +26,6 @@ export class StatusComponent implements OnInit {
 
   logout(): void {
     this.userService.logout();
-    this.router.navigate(['']);
+    this.router.navigate(['login']);
   }
 }

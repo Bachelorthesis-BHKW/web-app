@@ -11,7 +11,7 @@ import { JwtService } from '../services/jwt.service';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthGuardGuard implements CanActivate {
+export class AuthGuard implements CanActivate {
   constructor(private jwtService: JwtService, private router: Router) {}
 
   canActivate(
@@ -19,7 +19,7 @@ export class AuthGuardGuard implements CanActivate {
     state: RouterStateSnapshot
   ): Observable<boolean> | boolean {
     if (state.url != '/auth' && !this.jwtService.getJwt()) {
-      this.router.navigate(['/auth']);
+      this.router.navigate(['/login']);
       return false;
     }
     return true;
