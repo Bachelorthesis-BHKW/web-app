@@ -1,1 +1,33 @@
-<p>registration works!</p>
+<mat-card style="text-align: center">
+  <mat-card-title> Registration </mat-card-title>
+  <form (ngSubmit)="onLogin()" [formGroup]="registrationForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="nameControl" type="text" />
+    </mat-form-field>
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>Company</mat-label>
+      <input matInput formControlName="companyControl" type="text" />
+    </mat-form-field>
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>E-Mail</mat-label>
+      <input matInput formControlName="emailControl" type="email" />
+    </mat-form-field>
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="passwordControl" type="password" />
+    </mat-form-field>
+    <br />
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="!registrationForm.valid"
+      type="submit"
+    >
+      Register
+    </button>
+  </form>
+</mat-card>
