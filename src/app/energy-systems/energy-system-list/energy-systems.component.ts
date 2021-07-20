@@ -33,6 +33,7 @@ export class EnergySystemsComponent implements OnInit {
     this.energySystemService.deleteEnergySystem(energySystem).subscribe(
       () => {
         this.snackbarService.open('Success!');
+        this.selectedEnergySystem = undefined;
         this.getEnergySystems();
       },
       (error) => {
