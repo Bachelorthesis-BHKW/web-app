@@ -17,6 +17,8 @@ import { EsComponentsListComponent } from './es-components/es-components-list/es
 import { EsComponentsDetailComponent } from './es-components/es-components-detail/es-components-detail.component';
 import { CreateEsComponentComponent } from './es-components/create-es-component/create-es-component.component';
 import { MatSelectModule } from '@angular/material/select';
+import { ConsumptionChartComponent } from './consumption-chart/consumption-chart.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { MatSelectModule } from '@angular/material/select';
     EsComponentsListComponent,
     EsComponentsDetailComponent,
     CreateEsComponentComponent,
+    ConsumptionChartComponent,
   ],
   imports: [
     CommonModule,
@@ -40,6 +43,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatDialogModule,
     CoreModule,
     MatSelectModule,
+    NgxChartsModule,
   ],
 })
 export class EnergySystemsModule {}

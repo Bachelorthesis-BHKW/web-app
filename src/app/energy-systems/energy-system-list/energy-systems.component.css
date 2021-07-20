@@ -28,5 +28,11 @@ h2 {
 #edit-button {
   position: absolute;
   right: 85px;
+  bottom: 5px;
+}
+
+#stat-button {
+  position: absolute;
+  right: 160px;
   bottom: 10px;
 }
