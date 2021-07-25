@@ -42,6 +42,7 @@ export class CreateEsComponentComponent {
     this.esComponent.type = componentType;
     this.esComponentParams =
       ComponentHelper.getEmptyForComponentAttributesType(componentType);
+    this.esComponent.kenngroessen = this.esComponentParams;
     this.esComponentKenngroessenDescriptions =
       ComponentHelper.getKenngrossenDescripitonForComponentType(componentType);
   }
