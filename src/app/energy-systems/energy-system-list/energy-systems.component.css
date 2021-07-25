@@ -11,8 +11,12 @@ h2 {
   background-color: gray;
 }
 
+#es-name {
+  font-size: larger;
+}
+
 #es-id {
-  font-size: x-large;
+  font-size: smaller;
 }
 
 .row {

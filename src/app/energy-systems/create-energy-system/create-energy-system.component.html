@@ -1,6 +1,7 @@
 <app-edit-entity
   [entity]="energySystem"
   [disabledFields]="['energySystemId', 'userId', 'region']"
+  [tooltips]="energySystemAttributesDescription"
 >
 </app-edit-entity>
 <button mat-raised-button color="primary" (click)="onCreate(energySystem)">

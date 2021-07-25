@@ -5,6 +5,7 @@
   <mat-form-field fxFill>
     <mat-label>{{ attribute.key }}</mat-label>
     <input
+      [matTooltip]="tooltips.get(attribute.key) ?? ''"
       matInput
       [disabled]="
         disabledFields.indexOf(attribute.key.toString()) >= 0 || !editable
