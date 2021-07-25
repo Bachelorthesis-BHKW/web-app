@@ -10,6 +10,12 @@ export default interface ThermalEnergyStorage extends Parameters {
   uA_Speicher: number;
   h_Sensoren_m: number;
   t_Raum: number;
+  ruecklauftemp_Speicher: number;
+  vorlauftemp_max_waermeerzeiger: number;
+  bodentemp_leer: number;
+  bodentemp_voll: number;
+  deckeltemp_leer: number;
+  deckeltemp_voll: number;
 }
 
 export const emptyThermalEnergyStorage: ThermalEnergyStorage = {
@@ -22,4 +28,10 @@ export const emptyThermalEnergyStorage: ThermalEnergyStorage = {
   uA_Speicher: 0,
   h_Sensoren_m: 0,
   t_Raum: 0,
+  ruecklauftemp_Speicher: 0,
+  vorlauftemp_max_waermeerzeiger: 0,
+  bodentemp_leer: 0,
+  bodentemp_voll: 0,
+  deckeltemp_leer: 0,
+  deckeltemp_voll: 0,
 };

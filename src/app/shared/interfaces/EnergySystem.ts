@@ -14,9 +14,11 @@ export interface EnergySystem {
   deltaT: number;
   stetigkeitsfaktor: number;
   prognosemethodeTh: number;
+  prognosemethodeEl: number;
   qThZaehlerGesamt: boolean;
   qThZaehlerGetrennt: boolean;
   gewichtungsfaktorZufall: number;
+  uaGeb: number;
 
   algorithmTrigger: AlgorithmTrigger;
   cronTriggerTime: string;
@@ -30,23 +32,25 @@ export interface EnergySystem {
 export const emptyEnergySystem: EnergySystem = {
   energySystemId: 0,
   userId: 0,
-  name: '',
-  nFahrplan: 0,
-  untermengeNFahrplan: 0,
-  optimierungshorizontMin: 0,
+  name: 'New EnergySystem',
+  nFahrplan: 5000,
+  untermengeNFahrplan: 50,
+  optimierungshorizontMin: 2000,
   optimierungsgroesse: 0,
-  deltaT: 0,
-  stetigkeitsfaktor: 0,
+  deltaT: 10,
+  stetigkeitsfaktor: 5,
   prognosemethodeTh: 0,
+  prognosemethodeEl: 0,
   qThZaehlerGesamt: false,
   qThZaehlerGetrennt: false,
-  gewichtungsfaktorZufall: 0,
+  gewichtungsfaktorZufall: 0.25,
+  uaGeb: 1,
 
   algorithmTrigger: AlgorithmTrigger.post,
   cronTriggerTime: '',
-  maxHistoryDays: 3,
+  maxHistoryDays: 20,
   consumptionPostIntervalMin: 15,
-  latitude: 0,
-  longitude: 0,
+  latitude: 48.495949,
+  longitude: 9.21191,
   region: '',
 };

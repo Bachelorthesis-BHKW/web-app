@@ -10,7 +10,9 @@ import { EsComponentService } from '../../../core/services/es-component.service'
 import { ESComponentType } from '../../../shared/interfaces/es-components/ESComponentType';
 import { emptyCHP } from '../../../shared/interfaces/es-components/CHP';
 import { emptyThermalEnergyStorage } from '../../../shared/interfaces/es-components/ThermalEnergyStorage';
-import { emptyPeakBoiler } from '../../../shared/interfaces/es-components/PeakBoiler';
+import { emptyBattery } from '../../../shared/interfaces/es-components/Battery';
+import { emptyPv } from '../../../shared/interfaces/es-components/PV';
+import { emptySLK } from '../../../shared/interfaces/es-components/SLK';
 
 @Component({
   selector: 'app-create-es-component',
@@ -43,14 +45,16 @@ export class CreateEsComponentComponent {
         this.esComponentParams = emptyThermalEnergyStorage;
         break;
       case ESComponentType.SLK:
-        this.esComponentParams = emptyPeakBoiler;
+        this.esComponentParams = emptySLK;
         break;
       case ESComponentType.GS:
         break;
       case ESComponentType.Battery:
-      case ESComponentType.Generic:
+        this.esComponentParams = emptyBattery;
+        break;
       case ESComponentType.PV:
-      case ESComponentType.ST:
+        this.esComponentParams = emptyPv;
+        break;
       default:
         this.esComponentParams = {};
     }
