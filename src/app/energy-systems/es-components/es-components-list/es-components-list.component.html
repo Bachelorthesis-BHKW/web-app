@@ -6,7 +6,7 @@
     <mat-card class="energy-system-card" *ngFor="let component of components">
       <mat-card-content>
         <span id="es-id">{{ component.name }}</span>
-        ID: {{ component.esComponentId }}
+        ID: {{ component.esComponentId }} Type: {{ component.type }}
         <button
           mat-raised-button
           fxFlexAlign="end"
@@ -39,6 +39,7 @@
     <mat-card>
       <app-es-components-detail
         [esComponent]="selectedComponent"
+        [componentKenngroessenDescriptions]="componentKenngroessenDescription"
       ></app-es-components-detail>
     </mat-card>
   </mat-list>

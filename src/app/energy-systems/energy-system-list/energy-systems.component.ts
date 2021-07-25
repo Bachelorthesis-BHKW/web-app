@@ -4,6 +4,7 @@ import { EnergySystemService } from '../../core/services/energy-system.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateEnergySystemComponent } from '../create-energy-system/create-energy-system.component';
 import { SnackbarService } from '../../core/services/snackbar.service';
+import { ConsumptionChartComponent } from '../consumption-chart/consumption-chart.component';
 
 @Component({
   selector: 'app-energy-systems',
@@ -32,6 +33,7 @@ export class EnergySystemsComponent implements OnInit {
     this.energySystemService.deleteEnergySystem(energySystem).subscribe(
       () => {
         this.snackbarService.open('Success!');
+        this.selectedEnergySystem = undefined;
         this.getEnergySystems();
       },
       (error) => {
@@ -54,5 +56,11 @@ export class EnergySystemsComponent implements OnInit {
       })
       .afterClosed()
       .subscribe(() => this.getEnergySystems());
+  }
+
+  onShowConsumptions(energySystem: EnergySystem): void {
+    this.dialog.open(ConsumptionChartComponent, {
+      data: energySystem,
+    });
   }
 }

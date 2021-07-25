@@ -16,6 +16,9 @@ import { CoreModule } from '../core/components/core.module';
 import { EsComponentsListComponent } from './es-components/es-components-list/es-components-list.component';
 import { EsComponentsDetailComponent } from './es-components/es-components-detail/es-components-detail.component';
 import { CreateEsComponentComponent } from './es-components/create-es-component/create-es-component.component';
+import { MatSelectModule } from '@angular/material/select';
+import { ConsumptionChartComponent } from './consumption-chart/consumption-chart.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,7 @@ import { CreateEsComponentComponent } from './es-components/create-es-component/
     EsComponentsListComponent,
     EsComponentsDetailComponent,
     CreateEsComponentComponent,
+    ConsumptionChartComponent,
   ],
   imports: [
     CommonModule,
@@ -38,6 +42,8 @@ import { CreateEsComponentComponent } from './es-components/create-es-component/
     MatInputModule,
     MatDialogModule,
     CoreModule,
+    MatSelectModule,
+    NgxChartsModule,
   ],
 })
 export class EnergySystemsModule {}

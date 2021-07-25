@@ -8,8 +8,9 @@
     [opened]="(isHandset$ | async) === false"
   >
     <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list *ngIf="isLoggedIn">
-      <a mat-list-item [routerLink]="['/energy-systems']">Energy-Systems</a>
+    <mat-nav-list *ngIf="!isLoggedIn">
+      <a mat-list-item [routerLink]="['/login']">Login</a>
+      <a mat-list-item [routerLink]="['/registration']">Registration</a>
     </mat-nav-list>
     <app-status></app-status>
   </mat-sidenav>

@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
 export class EditEntityComponent {
   @Input() editable = true;
   @Input() entity: Object;
+  @Input() tooltips: Map<string, string> = new Map<string, string>();
   @Input() disabledFields: string[];
 
   constructor() {

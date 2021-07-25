@@ -5,6 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { FlexModule } from '@angular/flex-layout';
 import { MatInputModule } from '@angular/material/input';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [EditEntityComponent],
@@ -14,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
     FormsModule,
     FlexModule,
     MatInputModule,
+    MatTooltipModule,
   ],
   exports: [EditEntityComponent],
 })

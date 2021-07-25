@@ -1,6 +1,31 @@
+<mat-form-field>
+  <mat-label>Select type:</mat-label>
+  <mat-select
+    [(value)]="selectedType"
+    (valueChange)="onComponentTypeSelected(selectedType)"
+  >
+    <mat-option *ngFor="let type of componentTypes" [value]="type">
+      {{ type }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
 <app-edit-entity
   [entity]="esComponent"
-  [disabledFields]="['esComponentId', 'energySystemId']"
+  [disabledFields]="[
+    'esComponentId',
+    'energySystemId',
+    'kenngroessen',
+    'type',
+    'circularBufferMax',
+    'circularBufferPointer'
+  ]"
+  [tooltips]="esComponentAttributeDescriptions"
+>
+</app-edit-entity>
+<app-edit-entity
+  [tooltips]="esComponentKenngroessenDescriptions"
+  [entity]="esComponentParams"
+  [disabledFields]="[]"
 >
 </app-edit-entity>
 <button mat-raised-button color="primary" (click)="onAddComponent(esComponent)">

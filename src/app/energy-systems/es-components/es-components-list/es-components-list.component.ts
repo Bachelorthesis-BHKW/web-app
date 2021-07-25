@@ -1,10 +1,11 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { EnergySystem } from '../../../shared/interfaces/EnergySystem';
 import { EsComponentService } from '../../../core/services/es-component.service';
-import ESComponent from '../../../shared/interfaces/ESComponent';
+import ESComponent from '../../../shared/interfaces/es-components/ESComponent';
 import { SnackbarService } from '../../../core/services/snackbar.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateEsComponentComponent } from '../create-es-component/create-es-component.component';
+import ComponentHelper from '../../../shared/helpers/ComponentHelper';
 
 @Component({
   selector: 'app-es-components-list',
@@ -15,6 +16,7 @@ export class EsComponentsListComponent implements OnChanges {
   @Input() energySystem?: EnergySystem;
   components: ESComponent[] = [];
   selectedComponent?: ESComponent;
+  componentKenngroessenDescription = new Map<string, string>();
 
   constructor(
     private esComponentService: EsComponentService,
@@ -33,6 +35,8 @@ export class EsComponentsListComponent implements OnChanges {
     )
       this.selectedComponent = undefined;
     else this.selectedComponent = component;
+    this.componentKenngroessenDescription =
+      ComponentHelper.getKenngrossenDescripitonForComponentType(component.type);
   }
 
   onDelete(component: ESComponent, energySystem: EnergySystem): void {

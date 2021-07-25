@@ -7,9 +7,9 @@ import { EsClientService } from './es-client.service';
   providedIn: 'root',
 })
 export class EnergySystemService {
-  private static id = '$ID';
+  public static id = '$ID';
 
-  private static energySystemUri = '/energy-systems';
+  public static energySystemUri = '/energy-systems';
   private static energySystemIdUri = `${EnergySystemService.energySystemUri}/${EnergySystemService.id}`;
 
   constructor(private esClient: EsClientService) {}

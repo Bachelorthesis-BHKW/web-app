@@ -11,8 +11,12 @@ h2 {
   background-color: gray;
 }
 
+#es-name {
+  font-size: larger;
+}
+
 #es-id {
-  font-size: x-large;
+  font-size: smaller;
 }
 
 .row {
@@ -28,5 +32,11 @@ h2 {
 #edit-button {
   position: absolute;
   right: 85px;
+  bottom: 5px;
+}
+
+#stat-button {
+  position: absolute;
+  right: 160px;
   bottom: 10px;
 }
