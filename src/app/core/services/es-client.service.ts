@@ -12,7 +12,7 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class EsClientService {
-  private static baseUrl = 'http://rri-flexbetrieb.fh-reutlingen.de:1337/';
+  private static baseUrl = 'http://rri-flexbetrieb.fh-reutlingen.de:1337';
 
   constructor(private jwtService: JwtService, private httpClient: HttpClient) {}
 
