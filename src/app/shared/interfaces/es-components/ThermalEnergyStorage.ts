@@ -35,3 +35,36 @@ export const emptyThermalEnergyStorage: ThermalEnergyStorage = {
   deckeltemp_leer: 0,
   deckeltemp_voll: 0,
 };
+
+export const tesAttributeDescriptions: Map<string, string> = new Map<
+  string,
+  string
+>([
+  [
+    'speichertemp_leer',
+    'Speichertemperatur-Array zur Definition des minimalen Speicherfüllstands (Speicher leer) / °C',
+  ],
+  [
+    'speichertemp_voll',
+    'Speichertemperatur-Array zur Definition des maximalen Speicherfüllstands (Speicher voll) / °C',
+  ],
+  ['v_Speicher_m3', 'Volumen Wärmespeicher / m^3'],
+  ['h_Speicher_m', 'Höhe Wärmespeicher / m'],
+  ['rho', 'Dichte Speichermedium / kg/m^3'],
+  ['cp', 'Spezifische Wärmekapazität Speichermedium / kJ/(kg*K)'],
+  ['uA_Speicher', 'Wärmedurchgang Wärmespeicher / kW/K'],
+  ['h_Sensoren_m', 'Array mit absoluen Höhen der Temperatursensoren / m'],
+  ['t_Raum', 'Mittlere Raumtemperatur / °C'],
+  [
+    'ruecklauftemp_Speicher',
+    'Mittlere Rücklauftemperatur in den Speicher / °C',
+  ],
+  [
+    'vorlauftemp_max_waermeerzeiger',
+    'Maximale Vorlauftemperatur der Wärmeerzeuger / °C',
+  ],
+  ['bodentemp_leer', 'Bodentemperatur bei Speicher leer / °C'],
+  ['bodentemp_voll', 'Bodentemperatur bei Speicher voll / °C'],
+  ['deckeltemp_leer', 'Deckeltemperatur bei Speicher leer / °C'],
+  ['deckeltemp_voll', 'Deckeltemperatur bei Speicher voll / °C'],
+]);

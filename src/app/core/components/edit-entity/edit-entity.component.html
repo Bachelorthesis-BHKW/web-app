@@ -2,10 +2,9 @@
   id="es-attribute-keys"
   *ngFor="let attribute of entity.valueOf() | keyvalue; trackBy: customTrackBy"
 >
-  <mat-form-field fxFill>
+  <mat-form-field fxFill [matTooltip]="tooltips.get(attribute.key) ?? ''">
     <mat-label>{{ attribute.key }}</mat-label>
     <input
-      [matTooltip]="tooltips.get(attribute.key) ?? ''"
       matInput
       [disabled]="
         disabledFields.indexOf(attribute.key.toString()) >= 0 || !editable

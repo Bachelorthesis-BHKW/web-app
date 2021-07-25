@@ -5,7 +5,14 @@
     </mat-card-title>
     <app-edit-entity
       [entity]="energySystem"
-      [disabledFields]="['energySystemId', 'userId', 'region']"
+      [disabledFields]="[
+        'energySystemId',
+        'userId',
+        'region',
+        'createdAt',
+        'updatedAt'
+      ]"
+      [tooltips]="energySystemAttributesDescription"
     ></app-edit-entity>
     <button mat-raised-button color="primary" (click)="onSave(energySystem)">
       Save

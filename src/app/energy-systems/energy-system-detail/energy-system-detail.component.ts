@@ -2,6 +2,7 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import {
   emptyEnergySystem,
   EnergySystem,
+  energySystemAttributeDescriptions,
 } from '../../shared/interfaces/EnergySystem';
 import { EnergySystemService } from '../../core/services/energy-system.service';
 import { JsonPatchGenerator } from '../../shared/helpers/JsonPatchGenerator';
@@ -15,6 +16,7 @@ import { SnackbarService } from '../../core/services/snackbar.service';
 export class EnergySystemDetailComponent implements OnChanges {
   @Input() energySystem?: EnergySystem;
   originalEnergySystem: EnergySystem = emptyEnergySystem;
+  energySystemAttributesDescription = energySystemAttributeDescriptions;
 
   constructor(
     private energySystemService: EnergySystemService,

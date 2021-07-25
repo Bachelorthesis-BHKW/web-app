@@ -4,15 +4,16 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { SnackbarService } from '../../../core/services/snackbar.service';
 import ESComponent, {
   emptyESComponent,
+  esComponentAttributeDescriptions,
   Parameters,
 } from '../../../shared/interfaces/es-components/ESComponent';
 import { EsComponentService } from '../../../core/services/es-component.service';
 import { ESComponentType } from '../../../shared/interfaces/es-components/ESComponentType';
-import { emptyCHP } from '../../../shared/interfaces/es-components/CHP';
-import { emptyThermalEnergyStorage } from '../../../shared/interfaces/es-components/ThermalEnergyStorage';
-import { emptyBattery } from '../../../shared/interfaces/es-components/Battery';
-import { emptyPv } from '../../../shared/interfaces/es-components/PV';
-import { emptySLK } from '../../../shared/interfaces/es-components/SLK';
+import {
+  chpAttributeDescriptions,
+  emptyCHP,
+} from '../../../shared/interfaces/es-components/CHP';
+import ComponentHelper from '../../../shared/helpers/ComponentHelper';
 
 @Component({
   selector: 'app-create-es-component',
@@ -24,6 +25,8 @@ export class CreateEsComponentComponent {
   esComponentParams: Parameters = emptyCHP;
   selectedType: ESComponentType = ESComponentType.CHP;
   componentTypes: string[] = Object.values(ESComponentType);
+  esComponentAttributeDescriptions = esComponentAttributeDescriptions;
+  esComponentKenngroessenDescriptions = chpAttributeDescriptions;
 
   constructor(
     private esComponentService: EsComponentService,
@@ -37,27 +40,10 @@ export class CreateEsComponentComponent {
 
   onComponentTypeSelected(componentType: ESComponentType) {
     this.esComponent.type = componentType;
-    switch (componentType) {
-      case ESComponentType.CHP:
-        this.esComponentParams = emptyCHP;
-        break;
-      case ESComponentType.TES:
-        this.esComponentParams = emptyThermalEnergyStorage;
-        break;
-      case ESComponentType.SLK:
-        this.esComponentParams = emptySLK;
-        break;
-      case ESComponentType.GS:
-        break;
-      case ESComponentType.Battery:
-        this.esComponentParams = emptyBattery;
-        break;
-      case ESComponentType.PV:
-        this.esComponentParams = emptyPv;
-        break;
-      default:
-        this.esComponentParams = {};
-    }
+    this.esComponentParams =
+      ComponentHelper.getEmptyForComponentAttributesType(componentType);
+    this.esComponentKenngroessenDescriptions =
+      ComponentHelper.getKenngrossenDescripitonForComponentType(componentType);
   }
 
   onAddComponent(esComponent: ESComponent): void {

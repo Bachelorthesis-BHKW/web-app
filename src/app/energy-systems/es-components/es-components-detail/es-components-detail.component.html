@@ -1,3 +1,12 @@
 <div *ngIf="esComponent">
-  <app-edit-entity [entity]="esComponent" [editable]="false"></app-edit-entity>
+  <app-edit-entity
+    [entity]="esComponent"
+    [editable]="false"
+    [tooltips]="componentAttributeDescriptions"
+  ></app-edit-entity>
+  <app-edit-entity
+    [entity]="esComponent.kenngroessen"
+    [editable]="false"
+    [tooltips]="componentKenngroessenDescriptions"
+  ></app-edit-entity>
 </div>

@@ -11,10 +11,22 @@
 </mat-form-field>
 <app-edit-entity
   [entity]="esComponent"
-  [disabledFields]="['esComponentId', 'energySystemId', 'kenngroessen', 'type']"
+  [disabledFields]="[
+    'esComponentId',
+    'energySystemId',
+    'kenngroessen',
+    'type',
+    'circularBufferMax',
+    'circularBufferPointer'
+  ]"
+  [tooltips]="esComponentAttributeDescriptions"
 >
 </app-edit-entity>
-<app-edit-entity [entity]="esComponentParams" [disabledFields]="[]">
+<app-edit-entity
+  [tooltips]="esComponentKenngroessenDescriptions"
+  [entity]="esComponentParams"
+  [disabledFields]="[]"
+>
 </app-edit-entity>
 <button mat-raised-button color="primary" (click)="onAddComponent(esComponent)">
   Create

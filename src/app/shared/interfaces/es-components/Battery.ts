@@ -17,3 +17,15 @@ export const emptyBattery: Battery = {
   Discharge_eff: 0,
   Inverter_eff: 0,
 };
+
+export const batteryAttributeDescriptions: Map<string, string> = new Map<
+  string,
+  string
+>([
+  ['W_el_max_kWh', 'Maximale Kapazität Batterie / kWh'],
+  ['P_el_Charge_max_kW', 'Maximale Ladeleistung Batterie / kW'],
+  ['P_el_Discharge_max_kW', 'Maximale Entladeleistung Batterie / kW'],
+  ['Charge_eff', 'Ladeeffizienz Batterie (Wert zwischen 0 und 1)'],
+  ['Discharge_eff', 'Entladeeffizienz Batterie ( Wert zwischen 0 und 1)'],
+  ['Inverter_eff', 'Effizienz Wechselrichter (Wert zwischen 0 und 1)'],
+]);
