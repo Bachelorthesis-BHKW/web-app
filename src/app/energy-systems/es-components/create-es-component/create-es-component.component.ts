@@ -14,6 +14,7 @@ import {
   emptyCHP,
 } from '../../../shared/interfaces/es-components/CHP';
 import ComponentHelper from '../../../shared/helpers/ComponentHelper';
+import changeParseableNumberStringsToNumbersForObject from '../../../shared/helpers/changeStringToNumberForObject';
 
 @Component({
   selector: 'app-create-es-component',
@@ -48,6 +49,7 @@ export class CreateEsComponentComponent {
   }
 
   onAddComponent(esComponent: ESComponent): void {
+    changeParseableNumberStringsToNumbersForObject(esComponent.kenngroessen);
     this.esComponentService
       .postESComponent(this.energySystem, esComponent)
       .subscribe(
