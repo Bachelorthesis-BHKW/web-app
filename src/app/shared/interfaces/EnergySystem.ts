@@ -114,7 +114,7 @@ export const energySystemAttributeDescriptions: Map<string, string> = new Map<
   ],
   [
     'cronTriggerTime',
-    'post: Fahrplananfrage wird von Anlage gestellt; time: Fahrplan wird zu einem festen Zeitpunkt erstellt',
+    'Zeitintervall für Fahrplanerstellung nach: "https://crontab.guru/#*_*_*_*_*", falls algorithm_trigger = time',
   ],
   [
     'maxHistoryDays',
