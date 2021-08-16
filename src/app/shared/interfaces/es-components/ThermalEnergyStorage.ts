@@ -16,6 +16,8 @@ export default interface ThermalEnergyStorage extends Parameters {
   bodentemp_voll: number;
   deckeltemp_leer: number;
   deckeltemp_voll: number;
+  kapazitaet_variable: number;
+  kapazitaet_angabe: number;
 }
 
 export const emptyThermalEnergyStorage: ThermalEnergyStorage = {
@@ -34,6 +36,8 @@ export const emptyThermalEnergyStorage: ThermalEnergyStorage = {
   bodentemp_voll: 0,
   deckeltemp_leer: 0,
   deckeltemp_voll: 0,
+  kapazitaet_variable: 0,
+  kapazitaet_angabe: 0,
 };
 
 export const tesAttributeDescriptions: Map<string, string> = new Map<
@@ -67,4 +71,6 @@ export const tesAttributeDescriptions: Map<string, string> = new Map<
   ['bodentemp_voll', 'Bodentemperatur bei Speicher voll / °C'],
   ['deckeltemp_leer', 'Deckeltemperatur bei Speicher leer / °C'],
   ['deckeltemp_voll', 'Deckeltemperatur bei Speicher voll / °C'],
+  ['kapazitaet_variable', 'tbd'],
+  ['kapazitaet_angabe', 'tbd'],
 ]);
