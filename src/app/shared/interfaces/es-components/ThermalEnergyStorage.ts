@@ -11,7 +11,7 @@ export default interface ThermalEnergyStorage extends Parameters {
   h_Sensoren_m: number;
   t_Raum: number;
   ruecklauftemp_Speicher: number;
-  vorlauftemp_max_waermeerzeiger: number;
+  vorlauftemp_max_waermeerzeuger: number;
   bodentemp_leer: number;
   bodentemp_voll: number;
   deckeltemp_leer: number;
@@ -29,7 +29,7 @@ export const emptyThermalEnergyStorage: ThermalEnergyStorage = {
   h_Sensoren_m: 0,
   t_Raum: 0,
   ruecklauftemp_Speicher: 0,
-  vorlauftemp_max_waermeerzeiger: 0,
+  vorlauftemp_max_waermeerzeuger: 0,
   bodentemp_leer: 0,
   bodentemp_voll: 0,
   deckeltemp_leer: 0,
@@ -60,7 +60,7 @@ export const tesAttributeDescriptions: Map<string, string> = new Map<
     'Mittlere Rücklauftemperatur in den Speicher / °C',
   ],
   [
-    'vorlauftemp_max_waermeerzeiger',
+    'vorlauftemp_max_waermeerzeuger',
     'Maximale Vorlauftemperatur der Wärmeerzeuger / °C',
   ],
   ['bodentemp_leer', 'Bodentemperatur bei Speicher leer / °C'],
